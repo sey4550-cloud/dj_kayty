@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book DJ Kayty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #0A369D;         
+            --blue-hover: #001F54;   
+            --bg: #F4F6F9;           
+            --bg-card: #ffffff;      
+            --text-dark: #1C2541;    
+            --text-muted: #475569;   
+            --border: rgba(10, 54, 157, 0.15);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(244, 246, 249, 0.95);
+        }
+        .nav-logo-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+        .dj-text { color: var(--text-dark); }
+        .kayty-text { color: var(--blue); }
+        nav ul {
+            list-style: none;
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #E9ECEF;
+        }
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            display: block;
+            transition: all 0.2s ease;
+        }
+        nav ul li a:hover, nav ul li a.gold-link {
+            color: #ffffff;
+            background: var(--blue);
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto 20px auto;
+            max-width: 600px;
+            gap: 10px;
+            padding: 0 20px;
+        }
+        .tab-link {
+            flex: 1;
+            background: #E9ECEF;
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+        .tab-link:hover, .tab-link.active {
+            background: var(--blue);
+            color: #ffffff;
+            border-color: var(--blue);
+        }
+
+        /* FORM BOX */
+        .tab-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: none;
+        }
+        .tab-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .book-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            background: #F8FAFC;
+        }
+        .book-input:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: #ffffff;
+        }
+        .enroll-btn {
+            width: 100%;
+            background: var(--blue);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .enroll-btn:hover {
+            background: var(--blue-hover);
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .tabs { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1 class="nav-logo-heading"><span class="dj-text">DJ</span><span class="kayty-text">KAYTY</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#mixtapes">Mixtapes</a></li>
+            <li><a href="booking.html" class="gold-link">Booking</a></li>
+            <li><a href="index.html#subscribe">Subscribe</a></li>
+        </ul>
+    </nav>
+
+    <div class="tabs">
+        <button class="tab-link active" onclick="openBooking(event, 'Private')">PRIVATE EVENT</button>
+        <button class="tab-link" onclick="openBooking(event, 'Club')">CLUB NIGHT</button>
+        <button class="tab-link" onclick="openBooking(event, 'Wedding')">WEDDING</button>
+    </div>
+
+    <div id="Private" class="tab-content" style="display:block;">
+        <h3 style="color: var(--text-dark);">Private Booking</h3>
+        <form action="https://wa.me/233539206719" method="get" target="_blank">
+            <input type="text" name="text" placeholder="Your Name" required class="book-input">
+            <input type="date" name="date" required class="book-input">
+            <button type="submit" class="enroll-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+    <div id="Club" class="tab-content">
+        <h3 style="color: var(--text-dark);">Club Night</h3>
+        <form action="https://wa.me/233539206719" method="get" target="_blank">
+            <input type="text" name="text" placeholder="Club Name/Location" required class="book-input">
+            <input type="date" name="date" required class="book-input">
+            <button type="submit" class="enroll-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+    <div id="Wedding" class="tab-content">
+        <h3 style="color: var(--text-dark);">Wedding</h3>
+        <form action="https://wa.me/233539206719" method="get" target="_blank">
+            <input type="text" name="text" placeholder="Couple's Name" required class="book-input">
+            <input type="date" name="date" required class="book-input">
+            <button type="submit" class="enroll-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+    <script>
+    function openBooking(evt, type) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+        document.getElementById(type).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+    </script>
+</body>
+</html>

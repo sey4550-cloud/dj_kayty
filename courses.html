@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | DJ Kayty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght=300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --blue: #0A369D;
+            --blue-hover: #001F54;
+            --bg: #F4F6F9;
+            --bg-card: #ffffff;
+            --text-dark: #1C2541;
+            --text-muted: #475569;
+            --border: rgba(10, 54, 157, 0.15);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(244, 246, 249, 0.95);
+        }
+
+        nav h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+
+        .dj-text {
+            color: var(--text-dark);
+        }
+
+        .kayty-text {
+            color: var(--blue);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #E9ECEF;
+        }
+
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            background: var(--blue);
+        }
+
+        /* TABS CONTAINER */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            max-width: 600px;
+            gap: 10px;
+        }
+
+        .tab-link {
+            flex: 1;
+            background: #E9ECEF;
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .tab-link:hover,
+        .tab-link.active {
+            background: var(--blue);
+            color: #ffffff;
+            border-color: var(--blue);
+        }
+
+        /* CONTENT CARD */
+        .tab-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            display: none;
+        }
+
+        .tab-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .tab-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            width: 100%;
+            background: var(--blue);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .enroll-btn:hover {
+            background: var(--blue-hover);
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1><span class="dj-text">DJ</span><span class="kayty-text">KAYTY</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#mixtapes">Mixtapes</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="courses.html" style="color: #ffffff; background: var(--blue);">Courses</a></li>
+        </ul>
+    </nav>
+
+    <section id="course-content" style="padding: 60px 20px; text-align: center;">
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; margin-bottom: 30px; letter-spacing: 1px;">
+            Learn How To DJ</h2>
+
+        <div class="tabs">
+            <button class="tab-link active" onclick="openCourse(event, 'Beginner')">BEGINNER</button>
+            <button class="tab-link" onclick="openCourse(event, 'Intermediate')">INTERMEDIATE</button>
+            <button class="tab-link" onclick="openCourse(event, 'Master')">MASTER</button>
+        </div>
+
+        <div id="Beginner" class="tab-content" style="display:block;">
+            <h3>Beginner Course</h3>
+            <p>The foundation of DJing. Learn gear setup, basic counting, and introductory beatmatching structures.</p>
+            <a href="https://wa.me/233539206719?text=I%20want%20to%20enroll%20in%20the%20Beginner%20Course"
+                class="enroll-btn" target="_blank">ENROLL NOW</a>
+        </div>
+
+        <div id="Intermediate" class="tab-content">
+            <h3>Intermediate Course</h3>
+            <p>Focus on fluid EQ mixing, tactical phrase matching, loop control, and advanced software features.</p>
+            <a href="https://wa.me/233539206719?text=I%20want%20to%20enroll%20in%20the%20Intermediate%20Course"
+                class="enroll-btn" target="_blank">ENROLL NOW</a>
+        </div>
+
+        <div id="Master" class="tab-content">
+            <h3>Master Course</h3>
+            <p>Master the art of DJing with performance programming, advanced transitions, and crowd reading skills.</p>
+            <a href="https://wa.me/233539206719?text=I%20want%20to%20enroll%20in%20the%20Master%20Course"
+                class="enroll-btn" target="_blank">ENROLL NOW</a>
+        </div>
+    </section>
+
+    <script>
+        function openCourse(evt, courseName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(courseName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>

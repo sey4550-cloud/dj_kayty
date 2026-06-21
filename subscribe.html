@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | DJ Kayty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght=300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.18);
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-logo .dj {
+            color: #fff;
+        }
+
+        .nav-logo .kayty {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 14px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: rgba(255, 215, 0, 0.18);
+            color: var(--gold);
+        }
+
+        .subscribe-page {
+            padding: 80px 24px 60px;
+        }
+
+        .page-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page-inner h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .page-inner p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 660px;
+            margin: 0 auto 40px auto;
+        }
+
+        .subscribe-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.18);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .subscribe-box h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .subscribe-box p {
+            color: #ddd;
+            margin-bottom: 28px;
+        }
+
+        .sub-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .sub-input {
+            flex: 1;
+            min-width: 220px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .sub-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .sub-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .sub-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 18px 20px;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .subscribe-page {
+                padding: 40px 16px 40px;
+            }
+
+            .subscribe-box {
+                padding: 30px 20px;
+            }
+
+            .sub-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo"><span class="dj">DJ</span> <span class="kayty">KAYTY</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="subscribe.html" class="active">Subscribe</a></li>
+        </ul>
+    </nav>
+    <main class="subscribe-page">
+        <div class="page-inner">
+            <h1>Subscribe for DJ Kayty Updates</h1>
+            <p>Join the newsletter for new mixtapes, booking announcements, launch alerts, and private course access
+                delivered directly to your inbox.</p>
+            <div class="subscribe-box">
+                <h2>Stay connected</h2>
+                <p>Enter your email below to receive the latest drops, tour dates, and subscriber-only content.</p>
+                <form class="sub-form" action="#" method="post">
+                    <input type="email" name="email" placeholder="Your email address" required class="sub-input">
+                    <button type="submit" class="sub-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

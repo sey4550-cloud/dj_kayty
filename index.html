@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DJ Kayty | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2432227');
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #0A369D;         
+            --blue-hover: #001F54;   
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #128C7E;
+            --bg: #F4F6F9;           
+            --bg-card: #ffffff;      
+            --text-dark: #1C2541;    
+            --text-muted: #475569;   
+            --border: rgba(10, 54, 157, 0.15);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .fade-in { animation: fadein 0.9s ease both; }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        /* TICKER */
+        .ticker-wrap {
+            background: var(--blue);
+            overflow: hidden;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+        .ticker-label {
+            background: var(--text-dark);
+            color: #ffffff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 0 14px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .ticker-track {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 22s linear infinite;
+        }
+        .ticker-track span {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            padding: 0 40px;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* NAV */
+        nav {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 48px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(244, 246, 249, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            line-height: 1;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        .nav-logo .dj { color: var(--text-dark); }
+        .nav-logo .kayty { color: var(--blue); }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            background: #E9ECEF;
+        }
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            display: block;
+            transition: all 0.2s ease;
+        }
+        nav ul li a:hover {
+            color: #ffffff;
+            background: var(--blue);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* BUTTONS */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-blue { background: var(--blue); color: #fff; }
+        .btn-blue:hover { background: var(--blue-hover); }
+
+        /* FLOATING WHATSAPP BUTTON (BOTTOM RIGHT) */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-5px);
+        }
+
+        /* SECTION STYLING */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 5px;
+        }
+
+        /* MIXTAPE GRID */
+        .mixtape-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        .mixtape-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .mixtape-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .mixtape-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .download-btn {
+            background: var(--bg);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            display: block;
+        }
+        .download-btn:hover {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        /* NEWSLETTER FORM */
+        .subscribe-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+        .subscribe-box h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .subscribe-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+        .sub-form {
+            display: flex;
+            gap: 10px;
+        }
+        .sub-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 14px;
+            background: #F8FAFC;
+        }
+        .sub-input:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        .sub-btn {
+            background: var(--blue);
+            color: #ffffff;
+            border: none;
+            padding: 0 24px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .sub-btn:hover {
+            background: var(--blue-hover);
+        }
+
+        @media (max-width: 600px) {
+            .sub-form { flex-direction: column; }
+            nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/0539206719" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="ticker-wrap">
+        <div class="ticker-label">LATEST</div>
+        <div class="ticker-track">
+            <span>DJ KAYTY LIVE IN CONCERT 2026</span>
+            <span>NEW MIXTAPE DROPPING SOON</span>
+            <span>BOOKINGS OPEN FOR FALL/WINTER</span>
+            <span>DONT FORGET TO CHAT ON WHATSAPP</span>
+            <span>PLEASE SWIPE ON THE SCREEN TO GET THE COURCES PAGE</span> 
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home" class="nav-logo">
+            <span class="dj">DJ</span> <span class="kayty">KAYTY</span>
+        </a>
+        <ul>
+            <li><a href="#home" style="color: #ffffff88; background: var(--blue);">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="#mixtapes">Mixtapes</a></li>
+            <li><a href="subscribe.html">Subscribe</a></li>
+            <li><a href="courses.html">Courses</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero fade-in">
+        <h1>WELCOME TO THE MIX</h1>
+        <p>Stream and download the latest high-energy live audio sets, sign up for tour updates, or book your venue instantly.</p>
+        <div class="btn-container">
+            <a href="booking.html" class="btn btn-blue"><i class="fa-solid fa-calendar-days"></i> Book DJ Kayty</a>
+        </div>
+    </header>
+
+    <div class="container fade-in">
+        
+        <section id="mixtapes">
+            <h2 class="section-title">Latest Mixtapes</h2>
+            <div class="mixtape-grid">
+                
+                <div class="mixtape-card">
+                    <div>
+                        <h3>Forever Mixtape Vol 1</h3>
+                        <p>A seamless blend of the hottest afrohouse, dance, and chart-topping club anthems to keep the energy high.</p>
+                    </div>
+                    <a href="#" class="download-btn" download><i class="fa-solid fa-download"></i> Download MP3</a>
+                </div>
+
+                <div class="mixtape-card">
+                    <div>
+                        <h3>Late Night Club Session</h3>
+                        <p>Raw underground tech-house tracks recorded live straight from the DJ booth deck mainstage mix output.</p>
+                    </div>
+                    <a href="#" class="download-btn" download><i class="fa-solid fa-download"></i> Download MP3</a>
+                    <footer class="site-footer">
+        <p>&copy; 2026 DJ Kayty. All Rights Reserved.</p>
+        <p class="powered-by">Powered by <span class="tech-brand">Katy-Tech</span></p>
+    </footer>
+
+</body>
+</html>
+                </body>

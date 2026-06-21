@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1><span class="dj-text">DJ</span><span class="kayty-text">KAYTY</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="courses.html">Courses</a></li>
+        </ul>
+        <div class="top-right-container">
+            <button id="mobileMenuBtn" class="hamburger" aria-expanded="false" aria-controls="topRightPanel"
+                aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="topRightPanel" class="menu-panel" hidden>
+                <a href="gallery.html">Gallery</a>
+                <a href="courses.html">Courses</a>
+                <a href="subscribe.html">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <section style="text-align: center; padding: 50px;">
+        <h2 style="color: #FFD700;">Beginner Course</h2> <video width="640" height="360" controls>
+            <source src="videos/beginner/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const panel = document.getElementById('topRightPanel');
+            btn.addEventListener('click', function (e) {
+                const isHidden = panel.hasAttribute('hidden');
+                if (isHidden) {
+                    panel.removeAttribute('hidden');
+                    panel.classList.add('open');
+                    btn.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                } else {
+                    panel.setAttribute('hidden', '');
+                    panel.classList.remove('open');
+                    btn.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !panel.contains(e.target)) {
+                    panel.setAttribute('hidden', '');
+                    panel.classList.remove('open');
+                    btn.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 800) {
+                    panel.setAttribute('hidden', '');
+                    panel.classList.remove('open');
+                    btn.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
